@@ -1,5 +1,5 @@
 from rest_framework import viewsets
-
+from django_filters.rest_framework import DjangoFilterBackend
 from electronet.models import Product, Factory, Distributor, Businessman
 from electronet.permissions import IsActive
 from electronet.serializers import ProductSerializer, FactorySerializer, DistributorSerializer, BusinessmanSerializer
@@ -21,6 +21,8 @@ class FactoryViewSet(viewsets.ModelViewSet):
     queryset = Factory.objects.all()
     serializer_class = FactorySerializer
     action_permissions = [IsActive]
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['country']
 
 
 class DistributorViewSet(viewsets.ModelViewSet):
