@@ -7,26 +7,25 @@ from electronet.models import Product, Factory, Distributor, Businessman
 
 def linkify(field_name):
     """
-    Converts a foreign key value into clickable links.
-
-    If field_name is 'parent', link text will be str(obj.parent)
-    Link will be admin url for the admin url for obj.parent.id:change
+    Преобразование значения внешнего ключа в ссылку
+    При нажатии на ссылку, пользователь перенаправляется на
+    страницу редактирования объекта
     """
 
     def _linkify(obj):
         linked_obj = getattr(obj, field_name)
-        print(linked_obj)
         if linked_obj is None:
             return '-'
+        # Получение атрибутов
         app_label = linked_obj._meta.app_label
-        print(app_label)
         model_name = linked_obj._meta.model_name
-        print(model_name)
+        # формирование ссылки
         view_name = f'admin:{app_label}_{model_name}_change'
         link_url = reverse(view_name, args=[linked_obj.pk])
         return format_html('<a href="{}">{}</a>', link_url, linked_obj)
 
-    _linkify.short_description = field_name  # Sets column name
+    # Устанавливаем название колонки
+    _linkify.short_description = field_name
     return _linkify
 
 

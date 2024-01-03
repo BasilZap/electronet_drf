@@ -78,6 +78,10 @@ class Businessman(models.Model):
     creation_date = models.DateTimeField(default=timezone.now, verbose_name='Дата создания', **NULLABLE)
 
     def clean(self):
+        """
+        Валидация выбора поставщика в панели администратора
+        :return:
+        """
         if self.distributor and self.factory:
             raise ValidationError('Предприниматель может работать только с поставщиком или заводом')
 

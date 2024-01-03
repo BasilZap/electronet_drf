@@ -1,0 +1,200 @@
+[
+  {
+    "model": "users.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$tov7dTh61KyN3CKFfsoAK6$Z1GDT655/PddqDrpQBML5gwFeNhYC54I1OSU8Ucv5MA=",
+      "last_login": "2024-01-01T23:11:40.205Z",
+      "is_superuser": true,
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-01-01T23:10:16.371Z",
+      "email": "admin@adminov.ru",
+      "first_name": "admin",
+      "last_name": "Superuser",
+      "phone": null,
+      "city": null,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 5,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$alz9mpIk2hPdex0yA0drNB$I/aBzQ6+Wdqlxbog81HvGtK6Y3icmHc+uccYHGNyPB0=",
+      "last_login": null,
+      "is_superuser": false,
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-01-03T08:55:37Z",
+      "email": "andrey@petrov.ru",
+      "first_name": "Андрей",
+      "last_name": "Петров",
+      "phone": null,
+      "city": null,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 6,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$Mrk85vq9pUAAoW3Cl8OSK5$F/4qhgbcVud1Gem90yUFZgNdUIJnOwy2WjWp+Hy44K8=",
+      "last_login": null,
+      "is_superuser": false,
+      "is_staff": false,
+      "is_active": false,
+      "date_joined": "2024-01-03T08:56:05Z",
+      "email": "sergey@ivanov.ru",
+      "first_name": "Сергей",
+      "last_name": "Иванов",
+      "phone": null,
+      "city": null,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "electronet.product",
+    "pk": 1,
+    "fields": {
+      "name": "Телевизор \"Telek\"",
+      "model": "v1.0",
+      "launch_date": "2024-01-02T16:19:27Z"
+    }
+  },
+  {
+    "model": "electronet.product",
+    "pk": 2,
+    "fields": {
+      "name": "Чайник \"Chainik\"",
+      "model": "23.5",
+      "launch_date": "2024-01-02T16:50:57Z"
+    }
+  },
+  {
+    "model": "electronet.factory",
+    "pk": 1,
+    "fields": {
+      "name": "Электроприбор",
+      "email": "zavod@zavod.ru",
+      "country": "Казахстан",
+      "city": "Астана",
+      "street": "Пушкина",
+      "building": 3,
+      "creation_date": "2024-01-02T19:19:04Z",
+      "product": [
+        1,
+        2
+      ]
+    }
+  },
+  {
+    "model": "electronet.factory",
+    "pk": 2,
+    "fields": {
+      "name": "Завод \"Электроника\"",
+      "email": "electronica@factory.ru",
+      "country": "Россия",
+      "city": "Ярославль",
+      "street": "Советская",
+      "building": 14,
+      "creation_date": "2024-01-02T19:48:51Z",
+      "product": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "electronet.factory",
+    "pk": 3,
+    "fields": {
+      "name": "Звезда",
+      "email": "zv@factory.by",
+      "country": "Беларусь",
+      "city": "Брест",
+      "street": "Ленина",
+      "building": 5,
+      "creation_date": "2024-01-03T05:38:34.928Z",
+      "product": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "electronet.distributor",
+    "pk": 1,
+    "fields": {
+      "name": "Поставщик \"Электрозавод\"",
+      "email": "asdf@wert.com",
+      "country": "Россия",
+      "city": "Anywaysk",
+      "street": "Петрова",
+      "building": 12,
+      "distributor": 1,
+      "debt": 100.1,
+      "creation_date": "2024-01-02T19:19:04Z",
+      "product": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "electronet.distributor",
+    "pk": 2,
+    "fields": {
+      "name": "ЭлектроТорг",
+      "email": "elt@eltorg.ru",
+      "country": "Россия",
+      "city": "Вологда",
+      "street": "Энгельса",
+      "building": 30,
+      "distributor": 3,
+      "debt": 40000.3,
+      "creation_date": "2024-01-03T08:18:53.227Z",
+      "product": [
+        2
+      ]
+    }
+  },
+  {
+    "model": "electronet.businessman",
+    "pk": 1,
+    "fields": {
+      "name": "ИП Петров",
+      "email": "vnzapr@gmail.com",
+      "country": "Россия",
+      "city": "Вологда",
+      "street": "Петрова",
+      "building": 16,
+      "factory": 1,
+      "distributor": null,
+      "debt": 0.0,
+      "creation_date": "2024-01-02T19:23:38Z",
+      "product": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "electronet.businessman",
+    "pk": 2,
+    "fields": {
+      "name": "ИП Иванов",
+      "email": "za@qwe.ru",
+      "country": "Россия",
+      "city": "Москва",
+      "street": "Петрова 123",
+      "building": 33,
+      "factory": null,
+      "distributor": 1,
+      "debt": 10000.5,
+      "creation_date": "2024-01-02T19:43:16Z",
+      "product": [
+        2
+      ]
+    }
+  }
+]
